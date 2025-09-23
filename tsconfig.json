@@ -1,0 +1,29 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",            // 최신 JS 문법
+    "module": "NodeNext",          // NodeNext: ESM 방식 모듈 해석
+    // 만들어야 하는 프로젝트에 따라 모듈 옵션 적절하게 해야함 !! ex) ESNext
+    /*
+    ESNext = “순수 ECMAScript 사양 기준”
+    NodeNext = “실제 Node.js가 동작하는 방식에 맞춘 ECMAScript”
+
+    Node 20 환경에서 tsc를 돌릴 땐 반드시 NodeNext 조합을 써야 하고,
+    브라우저용 빌드(WebPack, Vite 등)일 때는 ESNext 모드
+    */
+    "moduleResolution": "NodeNext",
+    "outDir": "dist",              // tsc 컴파일 결과 저장 위치
+    "esModuleInterop": true,       // commonjs <-> esm 호환
+    "skipLibCheck": true,          // 타입 검사 스킵 (라이브러리 충돌 완화)
+    "strict": true,  /* (매우 중요) 엄격한 타입 검사 */
+    "moduleDetection": "force"
+    /*
+    JS 에서 TS로 마이그레이션 하는 경우 strict에 true를 주게 되는 경우 대참사 ..
+    따라서 가끔 false로 하는데 strict 관한 내용은 추가 커밋으로 상세하게 작성할 예정
+    */
+  },
+//  "ts-node": {
+//    "esm": true // ts-node가 ES 모듈 시스템으로 동작
+//  },
+  "include": ["src"]  // tsc 만 가능 . tsx 는 include를 무시하므로 실행할 파일을 반드시 지정해야함
+  /* index.ts에 import 체인으로 다 불러오기 때문에 */
+}
