@@ -12,10 +12,16 @@ num = anyVar;
 // unknown
 let unknownVar;
 /*
+* any는 모든 것이 가능하지만 반대로는 불가능하다.
+* unknown 보다 안전
 *
+* if(typeof unknownVar === "number) {   // 타입 정제 과정을 거쳐 사용
+*   num = unknownVar;
+* }
 * */
 unknownVar = "";
 unknownVar = 1;
 unknownVar = () => { };
-num = unknownVar;
 export {};
+// num = unknownVar;
+// unknownVar.toUpperCase();

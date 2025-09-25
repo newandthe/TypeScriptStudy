@@ -1,5 +1,9 @@
 // 열거형 타입 (Enumerable Type)
 // 여러가지 값들에 각 이름을 부여해 열거해두고 사용하는 타입
+/*
+* enum은 js로 변환되는 컴파일 과정에서 JS 객체로 변환되기 때문에
+* 코드상에서 값을 사용하듯이 사용 가능
+*  */
 var Role;
 (function (Role) {
     Role[Role["ADMIN"] = 0] = "ADMIN";
@@ -14,7 +18,7 @@ var Language;
 const user1 = {
     name: "user1",
     role: Role.ADMIN, // 관리자
-    language: Language.korean
+    language: Language.korean /* 값을 사용하는 것과 같이 사용 가능 */
 };
 const user2 = {
     name: "user2",
