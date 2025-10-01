@@ -12,11 +12,13 @@ a = 1;  a = 'testString'; a = true;
 
 let arr: (number | string | boolean)[] = [1, "test", true];
 
+// @ts-ignore
 type Dog = {
     name: string;
     color: string;
 };
 
+// @ts-ignore
 type Person = {
     name: string;
     language: string;
